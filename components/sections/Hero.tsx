@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Award, GraduationCap, Users } from "lucide-react";
 import { Button } from "../ui/button";
@@ -42,33 +43,32 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.99, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, ease: premiumEase }}
-            className="lg:col-span-5 relative w-full aspect-[4/5] rounded-[32px] overflow-hidden border border-graphite-200 bg-white p-8 lg:p-10 flex flex-col justify-between shadow-xs group hover:border-sage-300 hover:shadow-sm transition-all duration-300"
+            className="lg:col-span-5 relative w-full aspect-[4/5] rounded-[32px] overflow-hidden border border-graphite-200 bg-white p-0 flex flex-col shadow-xs group hover:border-sage-300 hover:shadow-sm transition-all duration-300"
           >
-            {/* Fine coordinate axis markers */}
-            <div className="flex items-center justify-between text-[8px] font-mono tracking-widest text-graphite-400 uppercase select-none">
-              <span>[ PRIMARY PORTRAIT ]</span>
-              <span>LMU GRADUATE</span>
-            </div>
+            {/* Actual teacher portrait */}
+            <Image
+              src={siteConfig.placeholders.teacherPortrait}
+              alt={siteContent.hero.imageAlt}
+              fill
+              priority
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 1024px) 100vw, 42vw"
+            />
 
-            {/* Geometry sketches in card */}
-            <div className="my-auto flex flex-col items-center justify-center text-center gap-5 relative select-none">
-              <div className="w-16 h-16 rounded-[24px] bg-graphite-100 border border-graphite-200 flex items-center justify-center text-sage-600 font-mono text-xl font-bold transition-all duration-300 group-hover:scale-105 shadow-3xs">
-                f(x)
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <span className="font-bold text-xl text-graphite-900 tracking-tight">
-                  {siteConfig.teacher.name}
-                </span>
-                <span className="text-[10px] text-graphite-500 max-w-[200px] leading-relaxed mx-auto font-bold uppercase tracking-wider">
-                  {siteConfig.teacher.role}
-                </span>
-              </div>
-            </div>
+            {/* Overlay: top label bar */}
+            {/* <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[8px] font-mono tracking-widest text-white/80 uppercase select-none z-10 drop-shadow">
+              <span className="bg-black/30 backdrop-blur-sm px-2 py-1 rounded-md">[ PRIMARY PORTRAIT ]</span>
+              <span className="bg-black/30 backdrop-blur-sm px-2 py-1 rounded-md">LMU GRADUATE</span>
+            </div> */}
 
-            {/* Asset tag */}
-            <div className="text-[9px] font-mono text-graphite-400 text-center select-none uppercase tracking-wide">
-              public/images/{siteConfig.placeholders.teacherPortrait}
+            {/* Overlay: bottom name bar */}
+            <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/60 via-black/20 to-transparent pt-16 pb-5 px-6 flex flex-col gap-1 select-none">
+              <span className="font-bold text-lg text-white tracking-tight drop-shadow">
+                {siteConfig.teacher.name}
+              </span>
+              <span className="text-[10px] text-white/75 font-bold uppercase tracking-wider drop-shadow">
+                {siteConfig.teacher.role}
+              </span>
             </div>
           </motion.div>
 

@@ -45,7 +45,7 @@ export const siteConfig = {
     ogImage: "/images/og-image.jpg"
   },
   placeholders: {
-    teacherPortrait: "/images/teacher-portrait.jpg",
+    teacherPortrait: "/images/teacher-portrait.png",
     classroom: "/images/hero-classroom.jpg",
     studentActivity: "/images/student-activity.jpg",
     whiteboardSession: "/images/whiteboard-session.jpg",

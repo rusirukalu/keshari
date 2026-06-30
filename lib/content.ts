@@ -111,7 +111,7 @@ export const siteContent = {
     sectionHeading: "Inside the Classroom.",
     sectionDesc: "Visual highlights of whiteboard algebra mapping, individual sheets reviews, and active lessons.",
     images: [
-      { id: "img1", label: "Teacher Portrait", desc: "Keshari Hansana preparing visual lesson plans.", placeholder: "teacher-portrait.jpg" },
+      { id: "img1", label: "Teacher Portrait", desc: "Keshari Hansana preparing visual lesson plans.", placeholder: "teacher-portrait.png" },
       { id: "img2", label: "Interactive Classroom", desc: "Focused worksheets drills and coordinate geometry.", placeholder: "hero-classroom.jpg" },
       { id: "img3", label: "Individual Review", desc: "Checking student logical proofs step-by-step.", placeholder: "student-activity.jpg" },
       { id: "img4", label: "Geometry session", desc: "Visualizing trigonometry graphs and theorems.", placeholder: "teaching-session.jpg" }
